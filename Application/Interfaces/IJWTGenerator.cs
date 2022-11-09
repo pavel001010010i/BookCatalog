@@ -1,10 +1,13 @@
-﻿using Domain;
-
+﻿using Domain.Models;
+using System.Security.Claims;
 
 namespace Application.Interfaces
 {
-    public interface IJwtGenerator
+    public interface IJwtService
     {
-        string CreateToken(AppUser user);
+        string GenerateAccessToken(IEnumerable<Claim> claims);
+        string GenerateRefreshToken();
+        ClaimsPrincipal? GetPrincipalFromExpiredToken(string token);
+        Task<IEnumerable<Claim>> GetClaimsUser(AppUser user);
     }
 }

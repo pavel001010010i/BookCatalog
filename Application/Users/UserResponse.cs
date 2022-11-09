@@ -6,12 +6,11 @@ using System.Threading.Tasks;
 
 namespace Application.Users
 {
-    public class User
+    public class UserResponse
     {
         public string DisplayName { get; set; }
-
+        public string Email { get; set; }
         public string Token { get; set; }
-
-        public string UserName { get; set; }
+        public string? RefreshToken { get; set; }  
     }
 }
