@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32929.385
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookCatalogApi", "BookCatalog\BookCatalogApi.csproj", "{ACFB7D26-8379-4B6E-A51E-487B9D0BCD51}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApi", "BookCatalog\WebApi.csproj", "{ACFB7D26-8379-4B6E-A51E-487B9D0BCD51}"
 	ProjectSection(ProjectDependencies) = postProject
 		{E6730595-7AA3-4B38-AF70-37D9021C77E1} = {E6730595-7AA3-4B38-AF70-37D9021C77E1}
 	EndProjectSection
@@ -14,7 +14,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "Domain\Domain.csp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Data", "Data\Data.csproj", "{A1C11F29-C9F7-412A-9F4F-A4B677CAD316}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{E92ABECA-6718-4996-AD73-EB01E3F560B7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{E92ABECA-6718-4996-AD73-EB01E3F560B7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
