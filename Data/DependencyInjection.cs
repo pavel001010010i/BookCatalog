@@ -3,7 +3,6 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
 using Application;
 using Application.Interfaces;
-using System;
 
 namespace Data
 {
