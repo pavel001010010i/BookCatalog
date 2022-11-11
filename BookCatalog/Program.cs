@@ -17,10 +17,10 @@ builder.Services.AddWepApi()
     .AddData(builder.Configuration)
     .AddInfrastructure(builder.Configuration);
 
-
 builder.Services.AddControllers()
     .AddJsonOptions(x =>
-   x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.Preserve); ;
+   x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.Preserve); 
+
 builder.Services.AddEndpointsApiExplorer();
 
 var app = builder.Build();

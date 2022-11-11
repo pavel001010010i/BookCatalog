@@ -4,7 +4,6 @@ using Application;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -12,10 +11,9 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Data.Migrations
 {
     [DbContext(typeof(DBContext))]
-    [Migration("20221108145748_init4")]
-    partial class init4
+    partial class DBContextModelSnapshot : ModelSnapshot
     {
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -95,13 +93,12 @@ namespace Data.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Token")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("TwoFactorEnabled")
                         .HasColumnType("bit");
 
-                    b.Property<string>("Email")
+                    b.Property<string>("UserName")
                         .HasMaxLength(256)
                         .HasColumnType("nvarchar(256)");
 
@@ -125,6 +122,10 @@ namespace Data.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Author")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("BookCoverURL")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -154,31 +155,34 @@ namespace Data.Migrations
                         {
                             Id = new Guid("80abbca8-664d-4b20-b5de-024705497d4a"),
                             Author = "Author1111",
+                            BookCoverURL = "c:\\Data\\Image\\one.png",
                             CategoryId = new Guid("c9d4c053-49b6-410c-bc78-2d54a9991870"),
                             Description = "Book description one11",
                             Pages = 111,
                             Title = "Boook one 1",
-                            YearPrint = new DateTime(2022, 11, 8, 14, 57, 47, 718, DateTimeKind.Utc).AddTicks(7297)
+                            YearPrint = new DateTime(2022, 11, 11, 13, 2, 54, 890, DateTimeKind.Utc).AddTicks(7742)
                         },
                         new
                         {
                             Id = new Guid("86dba8c0-d178-41e7-938c-ed49778fb52a"),
                             Author = "Author22222",
+                            BookCoverURL = "c:\\Data\\Image\\two.png",
                             CategoryId = new Guid("3d490a70-94ce-4d15-9494-5248280c2ce3"),
                             Description = "Book description twoo222",
                             Pages = 222,
                             Title = "Boook two 22",
-                            YearPrint = new DateTime(2022, 11, 8, 14, 57, 47, 718, DateTimeKind.Utc).AddTicks(7302)
+                            YearPrint = new DateTime(2022, 11, 11, 13, 2, 54, 890, DateTimeKind.Utc).AddTicks(7747)
                         },
                         new
                         {
                             Id = new Guid("021ca3c1-0deb-4afd-ae94-2159a8479811"),
                             Author = "Author333",
+                            BookCoverURL = "c:\\Data\\Image\\three.png",
                             CategoryId = new Guid("3d490a70-94ce-4d15-9494-5248280c2ce3"),
                             Description = "Book description three",
                             Pages = 333,
                             Title = "Boook three 33",
-                            YearPrint = new DateTime(2022, 11, 8, 14, 57, 47, 718, DateTimeKind.Utc).AddTicks(7304)
+                            YearPrint = new DateTime(2022, 11, 11, 13, 2, 54, 890, DateTimeKind.Utc).AddTicks(7751)
                         });
                 });
 

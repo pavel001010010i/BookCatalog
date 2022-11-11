@@ -1,5 +1,5 @@
 ﻿using Application.Common.Mapping;
-using Application.Users.Command.UpdateBook;
+using Application.Books.Commands.UpdateBook;
 using AutoMapper;
 
 namespace BookCatalogApi.Models
@@ -7,7 +7,7 @@ namespace BookCatalogApi.Models
     public class UpdateBookDTO : IMapWith<UpdateBookCommand>
     {
         public Guid Id { get; set; }
-        public string BookCover { get; set; }
+        public string BookCoverURL { get; set; }
         public string Title { get; set; }
         public string Author { get; set; }
         public string Description { get; set; }

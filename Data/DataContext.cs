@@ -3,13 +3,17 @@ using Data.EntityTypeConfigurations;
 using Domain.Models;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using System.Reflection.Emit;
 
 namespace Application
 {
     public class DBContext : IdentityDbContext<AppUser>, IDBContext
     {
-        public DBContext(DbContextOptions<DBContext> options) : base(options) { }
+        public DBContext(DbContextOptions<DBContext> options) : base(options) 
+        {
+            //Database.EnsureDeleted();
+            //Database.EnsureCreated();
+            //Database.Migrate();
+        }
         protected override void OnModelCreating(ModelBuilder builder)
         {
             builder.ApplyConfiguration(new BookConfiguration());

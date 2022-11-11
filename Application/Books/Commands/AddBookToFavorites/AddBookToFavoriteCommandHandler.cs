@@ -9,7 +9,6 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Application.Books.Commands.AddBookToFavorites
 {
-
     public class AddBookToFavoriteCommandHandler : IRequestHandler<AddBookToFavoriteCommand, Book>
     {
         private readonly IDBContext _dbContext;
@@ -18,15 +17,17 @@ namespace Application.Books.Commands.AddBookToFavorites
             (_dbContext, _manager) = (dbContext, manager);
         public async Task<Book> Handle(AddBookToFavoriteCommand request, CancellationToken cancellationToken)
         {
-            var book = await _dbContext.Books
+            var book = 
+                await _dbContext.Books.
+                Include(x=>x.Users)
                 .FirstOrDefaultAsync(x => x.Id == request.BookId, cancellationToken);
 
             if(book == null)
                 throw new NotFoundException(nameof(Book), request.BookId);
 
-            var user = await _manager.FindByNameAsync(request.NameUser);
+            var user = await _manager.FindByIdAsync(request.UserId.ToString());
             if (user == null)
-                throw new NotFoundException(nameof(AppUser), request.NameUser);
+                throw new NotFoundException(nameof(AppUser), request.UserId);
 
             book.Users.Add(user);
             await _dbContext.SaveChangesAsync(cancellationToken);

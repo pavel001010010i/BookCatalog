@@ -30,7 +30,7 @@ namespace Application.Users.Queries.Login
             var user = await _userManager.FindByEmailAsync(request.Email);
             if (user == null)
             {
-                throw new RestException(HttpStatusCode.Unauthorized, "UserResponse not found!");
+                throw new RestException(HttpStatusCode.Unauthorized, "User not found!");
             }
 
             var result = await _signInManager.CheckPasswordSignInAsync(user, request.Password, false);

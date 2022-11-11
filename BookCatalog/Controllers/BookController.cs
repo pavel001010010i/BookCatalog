@@ -1,12 +1,12 @@
 ﻿using Application.Books.Commands.AddBookToFavorites;
 using Application.Books.Commands.CreateBook;
+using Application.Books.Commands.UpdateBook;
 using Application.Books.Commands.DeleteBook;
 using Application.Books.Queries;
 using Application.Books.Queries.GetBooks;
 using Application.Books.Queries.GetBooksByCategory;
 using Application.Books.Queries.GetBooksByTitle;
 using Application.Common.Constants;
-using Application.Users.Command.UpdateBook;
 using BookCatalogApi.Models;
 using Domain.Models;
 using Microsoft.AspNetCore.Authorization;
@@ -48,11 +48,7 @@ namespace BookCatalogApi.Controllers
         [HttpPost("add-book-to-favorite")]
         public async Task<ActionResult<Book>> AddBookToFavorite([FromBody] AddBookToFavoriteDTO dto) 
         {
-            //var command = new AddBookToFavoriteCommand
-            //{
-            //    NameUser = User.Identity.Name,
-            //    BookId = dto.BookId
-            //};
+
             var command = Mapper.Map<AddBookToFavoriteCommand>(dto);
             var result = await Mediator.Send(command);
             return Ok(result);

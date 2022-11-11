@@ -1,12 +1,6 @@
-﻿using System.Collections.Generic;
-using System.Data;
-using System.Threading.Tasks;
-using Application;
-using Application.Common.Constants;
+﻿using Application.Common.Constants;
 using Domain.Models;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore.Internal;
-using Microsoft.VisualBasic;
 
 namespace Application
 {
@@ -44,18 +38,20 @@ namespace Application
                 {
                     new AppUser
                     {
+                        Id ="3d490a70-94ce-4d15-9494-86dba8c0",
                         DisplayName = "Admin main",
                         UserName = "Admin",
                         Email = "admin@admin.com"
                     },
                     new AppUser
                     {
-                        DisplayName = "UserResponse one",
-                        UserName = "UserResponse",
-                        Email = "UserResponse@user.com"
+                        Id ="3d490a70-d178-4d15-938c-ed49778fb52a",
+                        DisplayName = "Userone",
+                        UserName = "User",
+                        Email = "User@user.com"
                     }
                 };
-                //
+                
                 foreach (var user in users)
                 {
                     await userManager.CreateAsync(user, "qazwsX123@");

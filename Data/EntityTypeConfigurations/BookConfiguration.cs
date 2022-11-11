@@ -19,7 +19,7 @@ namespace Data.EntityTypeConfigurations
             new Book
             {
                 Id = new Guid("80abbca8-664d-4b20-b5de-024705497d4a"),
-                BookCover = "c:\\Data\\Image\\one.png",
+                BookCoverURL = "c:\\Data\\Image\\one.png",
                 Description = "Book description one11",
                 Author = "Author1111",
                 Pages = 111,
@@ -30,7 +30,7 @@ namespace Data.EntityTypeConfigurations
              new Book
              {
                  Id = new Guid("86dba8c0-d178-41e7-938c-ed49778fb52a"),
-                 BookCover = "c:\\Data\\Image\\two.png",
+                 BookCoverURL = "c:\\Data\\Image\\two.png",
                  Description = "Book description twoo222",
                  Author = "Author22222",
                  Pages = 222,
@@ -41,7 +41,7 @@ namespace Data.EntityTypeConfigurations
              new Book
              {
                  Id = new Guid("021ca3c1-0deb-4afd-ae94-2159a8479811"),
-                 BookCover = "c:\\Data\\Image\\three.png",
+                 BookCoverURL = "c:\\Data\\Image\\three.png",
                  Description = "Book description three",
                  Author = "Author333",
                  Pages = 333,

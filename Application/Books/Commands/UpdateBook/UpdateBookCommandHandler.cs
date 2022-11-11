@@ -6,7 +6,7 @@ using MediatR;
 using Microsoft.EntityFrameworkCore;
 
 
-namespace Application.Users.Command.UpdateBook
+namespace Application.Books.Commands.UpdateBook
 {
     public class UpdateCommandHandler : IRequestHandler<UpdateBookCommand>
     {

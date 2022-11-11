@@ -6,6 +6,6 @@ namespace Application.Books.Commands.AddBookToFavorites
     public class AddBookToFavoriteCommand : IRequest<Book>
     {
         public Guid BookId{ get; set; }
-        public string NameUser{ get; set; }
+        public Guid UserId { get; set; }
     }
 }

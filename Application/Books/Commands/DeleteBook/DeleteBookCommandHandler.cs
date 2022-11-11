@@ -14,7 +14,7 @@ namespace Application.Books.Commands.DeleteBook
         public async Task<Unit> Handle(DeleteBookCommand request, CancellationToken cancellationToken)
         {
             var book = await _dbContext.Books
-                .FindAsync(request.Id, cancellationToken);
+                .FindAsync(new object[] { request.Id }, cancellationToken);
 
             if (book == null)
                 throw new NotFoundException(nameof(Book), request.Id);
